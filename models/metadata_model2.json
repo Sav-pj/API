@@ -1,0 +1,15 @@
+{
+  "date_col": "date",
+  "target": "precip_3day_sum",
+  "horizon_days": 3,
+  "train_end": "2021-12-31",
+  "val_end": "2022-12-31",
+  "cv": "TimeSeriesSplit(n_splits=4)",
+  "scoring": "neg_root_mean_squared_error",
+  "best_params": {
+    "subsample": 0.7,
+    "n_estimators": 200,
+    "max_depth": 3,
+    "learning_rate": 0.01
+  }
+}

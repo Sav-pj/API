@@ -1,0 +1,16 @@
+{
+  "date_col": "date",
+  "target": "will_rain_plus7d",
+  "train_end": "2021-12-31",
+  "val_end": "2022-12-31",
+  "threshold": 0.33999999999999997,
+  "cv": "TimeSeriesSplit(n_splits=4)",
+  "scoring": "f1",
+  "best_params": {
+    "l2_regularization": 0.4951769101112702,
+    "learning_rate": 0.01515827816728276,
+    "max_iter": 505,
+    "max_leaf_nodes": 31,
+    "min_samples_leaf": 183
+  }
+}
