@@ -1,0 +1,12 @@
+[project]
+name = "open-meteo-api"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi",
+  "uvicorn",
+  "pandas",
+  "numpy",
+  "scikit-learn",
+  "joblib",
+]
