@@ -1,17 +1,21 @@
+# Use a lightweight Python image
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
 FROM python:3.11-slim
 
 WORKDIR /app
 
-# Install system deps (optional but useful for pandas)
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential ca-certificates && rm -rf /var/lib/apt/lists/*
-
+# Install dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+# Copy app and models
+COPY app ./app
+COPY models ./models
 
 EXPOSE 8000
 
-# Start API
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+COPY . .
+# or at least:
+# COPY models ./models
+# COPY app ./app

@@ -4,6 +4,19 @@ from datetime import datetime, timedelta
 import pandas as pd
 import joblib, json, os, glob
 
+# app/main.py
+from fastapi import FastAPI, HTTPException, Query
+from datetime import datetime, timedelta
+import pandas as pd, joblib, json, os, glob
+
+app = FastAPI(  # <<-- must be named 'app'
+    title="Open Meteo Weather Prediction API",
+    version="1.0.0",
+    description="Rain +7d classifier and 3-day precipitation regressor."
+)
+
+# ... your path resolution + model loading + endpoints ...
+
 def find_first(pattern, default=None):
     files = glob.glob(pattern)
     return files[0] if files else default
